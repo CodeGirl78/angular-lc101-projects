@@ -34,6 +34,7 @@
                 <li *ngFor = "let member of crew">{{member.name}}</li>
             </ul>
             <!-- Added a "Clear Crew List" button here. -->
+            <button *ngIf = "crew.length !== 0" (click) = "crew = []">Clear Crew List</button>
             
         </div>
     </div>
