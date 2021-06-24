@@ -31,7 +31,7 @@
         <div class="crew col-3">
             <h2>Selected Crew</h2>
             <ul>
-                <li>Use *ngFor to list the selected crew.</li>
+                <li *ngFor = "let member of crew">{{member.name}}</li>
             </ul>
             <!-- Added a "Clear Crew List" button here. -->
             
