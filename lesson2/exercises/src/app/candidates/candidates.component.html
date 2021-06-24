@@ -6,7 +6,7 @@
             <h2>Candidates</h2>
             <ol>
                 <!--Use *ngFor to automatically list all of the candidates' names.-->
-                <li>*ngFor="let candidate of candidates" (click)="selected = candidate">{{candidate.name}}</li>
+                <li *ngFor="let candidate of candidates" (click)="selected = candidate">{{candidate.name}}</li>
             </ol>
         </div>
     
