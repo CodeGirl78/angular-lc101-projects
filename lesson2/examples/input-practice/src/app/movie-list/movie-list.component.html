@@ -4,6 +4,6 @@
        <li *ngFor ="let movie of movies">{{movie}}</li>
     </ol>
     <hr>
-    <input #newMovie (keyup.arrowup)='true' type='text' placeholder="Enter Movie Title Here"/>
+    <input #newMovie (keyup.q)='true' type='text' placeholder="Enter Movie Title Here"/>
     <p>{{newMovie.value}}</p>
  </div>
