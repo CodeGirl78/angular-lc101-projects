@@ -1,7 +1,7 @@
 <div class='chores' *ngFor = 'let list of chores'>
   <h3>{{list.title}}</h3>
   <ul>
-    <li *ngFor = "let chore of chores">{{chore}}</li>
+    <li *ngFor="let task of list.tasks">{{task}}</li>
   </ul>
   <hr>
 </div>
