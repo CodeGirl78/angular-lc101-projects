@@ -6,10 +6,11 @@
     <p *ngIf="chores.length > finishedChores.length" style= "color: green;">"Work harder!"</p>
 </div>
 <hr>
-<div class="doneChores">
+<div class="doneChores" *ngIf="chores.length===0 || (finishedChores.length - chores.length) > 2; else otherwise">
     <h3>Done Chores</h3>
     <ul>
         <li *ngFor = 'let done of finishedChores'>{{done}}</li>
     </ul>
 </div>
+<p #otherwise>No allowance yet.</p>
 <hr>
