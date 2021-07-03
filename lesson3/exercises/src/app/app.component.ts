@@ -22,5 +22,23 @@ export class AppComponent {
        this.message = 'Shuttle in flight.';
     }
   }
+
+  handleLand() {
+    alert("The shuttle is landing. Landing gear engaged.");
+      this.color = 'green';
+      this.height = 0;
+      this.width = 0;
+      this.message = "The shuttle has landed.";
+  }
+
+  handleAbortMission() {
+    let result = window.confirm('Do you want to abort the mission?');
+    if (result) {
+      this.color = 'red';
+      this.height = 0;
+      this.width = 0;
+      this.message = "Mission aborted.";
+    }
+  }
   
 }
