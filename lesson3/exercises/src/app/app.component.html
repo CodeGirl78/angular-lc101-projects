@@ -5,6 +5,7 @@
       <p>{{message}}</p>
       <h2>Shuttle Trajectory</h2>
    </div>
+
    <div class="row justify-content-center">
       <div class="col-3">
          <div class="container-left">
@@ -20,24 +21,23 @@
             <img #rocketImage src = "assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="0" [style.bottom]="0"/>
          </div>
       </div>
-
-      <div class="col-3">
-         <div class="container-right">
-            <div *ngIf="!takeOffEnabled">
-               <button (click)="moveRocket(rocketImage, 'up')">Up</button>
-               <button (click)="moveRocket(rocketImage, 'down')">Down</button>
-               <button (click)="moveRocket(rocketImage, 'right')">Right</button>
-               <button (click)="moveRocket(rocketImage, 'left')">Left</button>
-            </div>
+ 
+      <div class="col-3" *ngIf="takeOffStat">
+         <div class="container-right"b>
+            <button (click)="moveRocket(rocketImage, 'up'); disab()" [disabled]="!topStat">Up</button>
+            <button (click)="moveRocket(rocketImage, 'down'); disab()" [disabled]="!bottomStat">Down</button>
+            <button (click)="moveRocket(rocketImage, 'right'); disab()" [disabled]="!rightStat">Right</button>
+            <button (click)="moveRocket(rocketImage, 'left'); disab()" [disabled]="!leftStat">Left</button>
             <h3>Space Shuttle Height</h3>
             <p>{{height}} km</p>
          </div>
       </div>
    </div>
-   
+
    <div class="container-control-buttons">
-      <button (click)="handleTakeOff()" [disabled]="!takeOffEnabled">Take Off</button>
-      <button (click)="handleLand(rocketImage)" [disabled]="takeOffEnabled">Land</button>
-      <button (click)="handleMissionAbort(rocketImage)" [disabled]="takeOffEnabled">Abort Mission</button>
+      <button (click)="handleTakeOff(rocketImage)" [disabled]="takeOffStat">Take Off</button>
+      <button (click)="handleLand(rocketImage)" [disabled]="!takeOffStat">Land</button>
+      <button (click)="handleAbort(rocketImage)" [disabled]="!takeOffStat">Abort Mission</button>
    </div>
+
 </div>
