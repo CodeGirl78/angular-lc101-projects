@@ -34,19 +34,19 @@ export class ButtonsComponent implements OnInit {
       this.inactiveY = true;
    }
 
-   catchMe1 = () => {
+   catch = () => {
       this.visibleMe = true;
       this.visibleMe1 = false;
       this.visibleMe2 = true;
    }
 
-   catchMe2 = () => {
+   catch1 = () => {
       this.visibleMe = false;
       this.visibleMe1 = true;
       this.visibleMe2 = true;
    }
    
-   catchMe3 = () => {
+   catch2 = () => {
       this.visibleMe = true;
       this.visibleMe1 = true;
       this.visibleMe2 = false;
